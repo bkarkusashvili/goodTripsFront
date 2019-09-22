@@ -1,0 +1,95 @@
+{
+    "cities": [
+        {
+            "id": 1,
+            "type": "city",
+            "title": "თბილისი",
+            "address": "შიდა ქართლი"
+        },
+        {
+            "id": 2,
+            "type": "hotel",
+            "title": "სასტუმრო თბილისი მარიოტი",
+            "address": "რუსთაველის გამზირი 13, თბილისი"
+        },
+        {
+            "id": 3,
+            "type": "location",
+            "title": "თბილისი მოლი",
+            "address": "დ. აღმაშენებლის მოედანი"
+        },
+        {
+            "id": 4,
+            "type": "post",
+            "title": "თბილისი123",
+            "address": "@tbilisi123 - 25 გამომწერი"
+        }
+    ],
+    "trendingFoods": [
+        {
+            "id": 1,
+            "image": "https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "title": "იმერული ხაჭაპური",
+            "price": "15.00",
+            "stars": 4,
+            "starsCount": 18,
+            "favorite": true
+        },
+        {
+            "id": 2,
+            "image": "https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "title": "ქათმის სალათი",
+            "price": "25.00",
+            "stars": 3,
+            "starsCount": 128,
+            "favorite": false
+        },
+        {
+            "id": 3,
+            "image": "https://images.pexels.com/photos/1246957/pexels-photo-1246957.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "title": "აჭარული ხაჭაპური",
+            "price": "35.00",
+            "stars": 2,
+            "starsCount": 23,
+            "favorite": true
+        },
+        {
+            "id": 4,
+            "image": "https://images.pexels.com/photos/2619970/pexels-photo-2619970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "title": "ხინკალი",
+            "price": "50.00",
+            "stars": 5,
+            "starsCount": 12,
+            "favorite": false
+        }
+    ],
+    "foods": [
+        {
+            "id": 1,
+            "image": "https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "title": "რესტორანი მარაბელი",
+            "address": "ბელიაშვილის 93",
+            "stars": 4,
+            "starsCount": 18,
+            "favorite": true
+        },
+        {
+            "id": 2,
+            "image": "https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "title": "რესტორანი მარაბელი",
+            "address": "ბელიაშვილის 93",
+            "stars": 4,
+            "starsCount": 18,
+            "favorite": true
+        },
+        {
+            "id": 3,
+            "image": "https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "title": "რესტორანი მარაბელი",
+            "address": "ბელიაშვილის 93",
+            "stars": 4,
+            "starsCount": 18,
+            "favorite": true
+        }
+    ]
+}
