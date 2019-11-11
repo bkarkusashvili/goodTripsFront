@@ -7,7 +7,7 @@ export const Text = (props) => {
     const fontsLoaded = useContext(FontStatus);
     return (<>
         {fontsLoaded ? (
-            <TextBase style={props.style}>
+            <TextBase {...props}>
                 {props.children} 
             </TextBase>
         ) : null}

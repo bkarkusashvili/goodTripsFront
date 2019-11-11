@@ -1,0 +1,84 @@
+{
+    "services": [
+        {
+            "name": "wifi",
+            "title": "Wi-Fi",
+            "icon": ""
+        },
+        {
+            "name": "food",
+            "title": "საუზმე",
+            "icon": ""
+        },
+        {
+            "name": "bar",
+            "title": "ბარი",
+            "icon": ""
+        },
+        {
+            "name": "pool",
+            "title": "აუზი",
+            "icon": ""
+        },
+        {
+            "name": "gym",
+            "title": "დარბაზი",
+            "icon": ""
+        },
+        {
+            "name": "restaurant",
+            "title": "რესტორანი",
+            "icon": ""
+        },
+        {
+            "name": "movie",
+            "title": "კინო",
+            "icon": ""
+        },
+        {
+            "name": "spa",
+            "title": "სპა",
+            "icon": ""
+        },
+        {
+            "name": "public-wifi",
+            "title": "საჯარო Wi-Fi",
+            "icon": ""
+        },
+        {
+            "name": "internet",
+            "title": "ინტერნეტი",
+            "icon": ""
+        },
+        {
+            "name": "free-wifi",
+            "title": "უფასო Wi-Fi",
+            "icon": ""
+        },
+        {
+            "name": "air-conditioner",
+            "title": "გაგრილება",
+            "icon": ""
+        },
+        {
+            "name": "free-internet",
+            "title": "უფასო ინტერნეტი",
+            "icon": ""
+        },
+        {
+            "name": "non-smoke-area",
+            "title": "ოთახი",
+            "icon": ""
+        },
+        {
+            "name": "free-parking",
+            "title": "უფასო პარკინგი",
+            "icon": ""
+        },
+        {
+            "name": "alarm",
+            "title": "გაღვიძების სერვისი",
+            "icon": ""
+        }
+    ] 
+}

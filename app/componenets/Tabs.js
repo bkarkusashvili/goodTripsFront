@@ -11,7 +11,7 @@ export const Tabs = () => {
                 <Text style={[styles.text, styles.textActive]}>სასტუმროები</Text>
             </Touchable>
             <Touchable style={styles.button}>
-                <Icon icon='' style={[styles.icon]} />
+                <Icon icon='' style={[styles.icon]} />
                 <Text style={styles.text}>გასაკეთებელი</Text>
             </Touchable>
             <Touchable style={styles.button}>

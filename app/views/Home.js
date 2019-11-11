@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { StyleSheet, View, ScrollView, ImageBackground, Modal } from 'react-native';
+import { StyleSheet, View, ScrollView, ImageBackground, StatusBar } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 
 import { FontStatus } from '../store';
@@ -8,10 +8,15 @@ import { City } from '../modal';
 
 import data from '../../assets/data.json';
 
-const Home = () => {
+const Home = (props) => {
     const [cityModal, setCityModal] = useState(false);
     const fontsLoaded = useContext(FontStatus);
     const mainBG = require('../../assets/images/Tbilisi-Georgia.jpg');    
+
+    StatusBar.setBackgroundColor('rgba(255,255,255, .2)', true);
+    StatusBar.setBarStyle('dark-content', true);
+    StatusBar.setTranslucent(true);
+
     return (
         <ScrollView style={{width: '100%'}} showsVerticalScrollIndicator={false}>
             <ImageBackground style={styles.headerImage} source={mainBG}>
@@ -32,26 +37,26 @@ const Home = () => {
                 {/* Trending Foods */}
                 <HeadLine text={'Trending Foods'} />
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <Card type="short" data={data.trendingFoods} />
+                    <Card type="short" data={data.trendingFoods} single='trendFood' navigation={props.navigation} />
                 </ScrollView>
                 <HeadLine text={'რესტორნები'} />
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <Card type="large" data={data.foods} />
+                    <Card type="large" data={data.foods} single='food' navigation={props.navigation} />
                 </ScrollView>
                 <HeadLine text={'Trending Places'} />
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <Card type="short" data={data.trendingFoods} />
+                    <Card type="short" data={data.trendingFoods} single='trendPlace' navigation={props.navigation} />
                 </ScrollView>
                 <HeadLine text={'სასტუმროები'} />
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <Card type="medium" data={data.trendingFoods} />
+                    <Card type="medium" data={data.trendingFoods} single='hotel' navigation={props.navigation} />
                 </ScrollView>
                 <HeadLine text={'ღირსშესანიშნაობები'} />
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <Card type="medium" data={data.trendingFoods} />
+                    <Card type="medium" data={data.trendingFoods} single='event' navigation={props.navigation} />
                 </ScrollView>
                 {/* Trending Foods */}
-                <City visible={cityModal} close={setCityModal} animationType="slide" />
+                <City visible={cityModal} close={setCityModal} />
             </View>
         </ScrollView>
     );

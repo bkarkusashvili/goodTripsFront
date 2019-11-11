@@ -26,6 +26,11 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "Test Description"
+    "description": "Test Description",
+    "androidStatusBarColor": "#FFFFFF",
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#FFFFFF"
+    }
   }
 }

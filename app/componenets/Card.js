@@ -1,50 +1,70 @@
 import React from 'react';
 import { View, Image, ImageBackground, StyleSheet } from 'react-native';
 
-import { Text, Icon } from '../lib';
+import { Text, Icon, Touchable, Stars } from '../lib';
 
-export const Card = ({data: items, type}) => {
+export const Card = (props) => {
+    const {
+        data: items,
+        type = 'short',
+        single = 'hotel',
+        horizontal = true,
+        navigation
+    } = props;
+    
     return (
-        <>
-        {items.map((item, index) => (
-            <View style={[styles.container, styles[type], index === items.length - 1 ? styles.last : null]} key={item.id}>
-                {type === 'short' ? 
-                    <Image style={styles.imageSmall} source={{uri: item.image}} /> :
-                type === 'medium' || type === 'large' ?
-                    <ImageBackground style={styles.imageBig} source={{uri: item.image}}>
-                        <Icon icon='' style={[styles.heart, styles.heartTop, item.favorite ? styles.heartActive : null ]} />
-                    </ImageBackground> : null
-                }
-                <View style={styles.content}>
-                    <View style={styles.cardHeader}>
-                        <Text style={styles.title}>{item.title}</Text>
-                        {item.address ? <Text style={styles.subTitle}>{item.address}</Text> : null}
-                        {item.price ? <Text style={styles.price}>₾{item.price}</Text> : null}
-                    </View>
-                    <View style={styles.cardFooter}>
-                        <View style={styles.starWrap}>
-                            <Icon icon='' style={[styles.star, item.stars >= 1 ? styles.starActive : null]} />
-                            <Icon icon='' style={[styles.star, item.stars >= 2 ? styles.starActive : null]} />
-                            <Icon icon='' style={[styles.star, item.stars >= 3 ? styles.starActive : null]} />
-                            <Icon icon='' style={[styles.star, item.stars >= 4 ? styles.starActive : null]} />
-                            <Icon icon='' style={[styles.star, item.stars >= 5 ? styles.starActive : null]} />
-                            <Text style={[styles.reviews]}>({item.starsCount})</Text>
+        <View style={[!horizontal ? styles.outerContainer: null, {flexDirection: 'row'}]}>
+        {items.map((item) => (
+            <View key={item.id} style={[styles.container, !horizontal ? styles.containerHorizontal: null]}>
+                <View style={[styles.itemContainer, styles[type]]}>
+                    <Touchable style={{paddingBottom: 10}} onPress={() => navigation.navigate('Single', { single })}>
+                        {type === 'short' ? 
+                            <Image style={styles.imageSmall} source={{uri: item.image}} /> :
+                        type === 'medium' || type === 'large' ?
+                            <ImageBackground style={styles.imageBig} source={{uri: item.image}}>
+                                <Icon icon='' style={[styles.heart, styles.heartTop, item.favorite ? styles.heartActive : null ]} />
+                            </ImageBackground> : null
+                        }
+                        <View style={styles.content}>
+                            <View style={styles.cardHeader}>
+                                <Text style={styles.title}>{item.title}</Text>
+                                {item.address ? <Text style={styles.subTitle}>{item.address}</Text> : null}
+                                {item.price ? <Text style={styles.price}>₾{item.price}</Text> : null}
+                            </View>
+                            <View style={styles.cardFooter}>
+                                <View style={styles.starWrap}>
+                                    <Stars stars={item.stars} />
+                                    <Text style={[styles.reviews]}>({item.starsCount})</Text>
+                                </View>
+                                {/* <Icon icon='' style={[styles.heart]} /> */}
+                            </View>
                         </View>
-                        {/* <Icon icon='' style={[styles.heart]} /> */}
-                    </View>
+                    </Touchable>
                 </View>
             </View>
         ))}
-        </>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
+    outerContainer: {
+        marginHorizontal: -15,
+        flexWrap: 'wrap',
+    },
     container: {
+        paddingHorizontal: 7.5,
+        flexDirection: 'row',
+    },
+    containerHorizontal: {
+        marginBottom: 15,
+        flexWrap: 'wrap',
+        width: '50%'
+    },
+    itemContainer: {
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
-        paddingBottom: 10,
-        marginRight: 15,
+        flex: 1,
         overflow: 'hidden'
     },
     short: {
@@ -56,9 +76,6 @@ const styles = StyleSheet.create({
     },
     large: {
         width: 220,
-    },
-    last: {
-        marginRight: 0
     },
     imageBig: {
         width: '100%',
@@ -111,17 +128,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center'
     },
-    star: {
-        fontFamily: 'Icons',
-        color: '#E1E7EB',
-        marginRight: 4
-    },
     reviews: {
         fontSize: 11,
         color: '#99A1B3',
-    },
-    starActive: {
-        color: '#FF971C'
     },
     heart: {
         fontFamily: 'Icons',

@@ -7,9 +7,11 @@ export const HeadLine = (props) => {
     return (
         <View style={[styles.container, props.style]}>
             <Text style={styles.text}>{props.text}</Text>
-            <TouchableOpacity>
-                <Text style={styles.button}>მეტის ნახვა</Text>
-            </TouchableOpacity>
+            {props.more !== false && (
+                <TouchableOpacity>
+                    <Text style={styles.button}>მეტის ნახვა</Text>
+                </TouchableOpacity>
+            )}
         </View>
     );
 }
